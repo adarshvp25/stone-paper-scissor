@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <p><a href="/index.html">RPS Royale</a></p>
+            </div>
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+
+            <div id="navMenu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="./howtoplay.html">How To Play</a></li>
+                    <li><a href="">Leaderboard</a></li>
+                </ul>
+                <div class="buttons">
+                    <button>Login</button>
+                    <button>Sign Up</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>About Us</h1>
+        <div class="container">
+            <h2>Who We Are</h2>
+            <p>RPS Royale is more than just a game – it’s a place where quick decisions, fun competition, and elegant
+                design
+                come together to give players a fast, fun, and friendly experience.</p>
+
+            <h2>Our Mission</h2>
+            <p>We're here to turn a classic childhood game into an engaging digital experience. No clutter, no
+                complexity -
+                just you, your choices, and the thrill of the match.</p>
+
+            <h2>What Makes RPS Royale Special?</h2>
+            <ul>
+                <li><strong>Instant Gameplay:</strong> No login required – just click and play.</li>
+                <li><strong>Minimal Design:</strong> Soft, clean visuals that feel modern and light.</li>
+                <li><strong>Real-Time Matches:</strong> Battle bots or real players instantly.</li>
+                <li><strong>Track Your Wins:</strong> Stats and leaderboards to fuel your progress.</li>
+                <li><strong>Works Everywhere:</strong> Mobile-ready for gaming on the go.</li>
+            </ul>
+
+            <h2>Contact Us</h2>
+            <p>Got feedback, questions, or ideas? Reach out at <a
+                    href="mailto:support@rpsroyale.com">support@rpsroyale.com</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="">Copyright</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function () {
+            this.classList.toggle('active'); // Toggle active class on hamburger
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active'); // Toggle nav menu visibility
+
+            // Add/remove class to shift the main content below the header
+            const mainContent = document.querySelector('main');
+            if (navMenu.classList.contains('active')) {
+                mainContent.classList.add('main-content-shift');  // Push content down
+            } else {
+                mainContent.classList.remove('main-content-shift');  // Return content to original position
+            }
+        });
+    </script>
+</body>
+
+</html>

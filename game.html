@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+    <header>
+        <h1>Rock, Paper & Scissors Game</h1>
+    </header>
+
+    <section>
+        <div class="imgSec">
+            <img src="rock.png" alt="rock" class="img stone">
+            <img src="paper.png" alt="paper" class="img paper">
+            <img src="scissors.png" alt="scissors" class="img scissor">
+        </div>
+
+        <div class="result">
+            <h3>Result</h3>
+        </div>
+
+        <div class="container">
+            <div class="score">
+                <div class="uscore">
+                    <h4>User Score</h4>
+                    <p id="uscoreupdate">0</p>
+                </div>
+                <div class="cscore">
+                    <h4>Computer Score</h4>
+                    <p id="cscoreupdate">0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2025 RPS. All rights reserved</span>
+        <span>
+            <ul>
+                <li><a href="#">How To Play</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+        </span>
+    </footer>
+    <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --nav: #1F6FB7;
+    --navTextColor: white;
+    --navHovColor: #FFC400;
+    --bodyBG: #FAFBFD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--bodyBG);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Header Section */
+header {
+    position: sticky;
+    top: 0;
+    color: var(--navTextColor);
+    background-color: var(--nav);
+    padding: 20px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#logo p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#navMenu {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+#navMenu ul {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+#navMenu ul li {
+    list-style: none;
+}
+
+#navMenu ul li a {
+    position: relative;
+    text-decoration: none;
+}
+
+#navMenu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--navHovColor);
+    transition: width 0.3s ease;
+}
+
+#navMenu ul li a:hover::after {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+}
+
+header button {
+    width: 5rem;
+    height: 2rem;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--navTextColor);
+}
+
+header button:hover {
+    background-color: var(--navHovColor);
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* Mobile-first responsiveness */
+@media (max-width: 850px) {
+    nav {
+        justify-content: space-between;
+    }
+
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--nav);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    #navMenu ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #navMenu ul li {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .buttons {
+        align-self: flex-start;
+        padding: 10px 20px;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: var(--navTextColor);
+    }
+
+    .hamburger.active+#navMenu {
+        display: flex;
+        animation: dropdown 0.3s ease-out;
+        padding-bottom: 15px;
+        max-height: 500px;
+    }
+
+    /* Add animation for the dropdown effect */
+    @keyframes dropdown {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Active state of the hamburger */
+    .hamburger.active {
+        color: var(--navHovColor);
+    }
+
+    .main-content-shift {
+        transition: margin-top 0.3s ease-out;
+        margin-top: 180px;
+    }
+}
+
+/* Main Section */
+main {
+    margin: 20px 0;
+}
+
+main h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1f70b73f;
+}
+
+.container {
+    padding: 30px;
+}
+
+.container ol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--nav);
+    color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+@media (max-width: 850px) {
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--nav);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active+#navMenu {
+        display: flex;
+        padding-bottom: 15px;
+        animation: dropdown 0.3s ease-out;
+    }
+
+    @keyframes dropdown {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        position: static;
+    }
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+footer ul li {
+    list-style: none;
+    position: relative;
+}
+
+footer ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--navHovColor);
+    transition: width 0.3s ease;
+}
+
+footer ul li:hover::after {
+    width: 100%;
+}

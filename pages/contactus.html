@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | RPS Royale</title>
+    <link rel="stylesheet" href="contactus.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <p><a href="/index.html">RPS Royale</a></p>
+            </div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <div id="navMenu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="./howtoplay.html">How To Play</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul>
+                <div class="buttons">
+                    <button>Login</button>
+                    <button>Sign Up</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <div class="container">
+            <p>If you have any questions, feedback, or suggestions, we’d love to hear from you! Just drop us a message
+                below or email us directly.</p>
+
+            <form action="mailto:support@rpsroyale.com" method="POST" enctype="text/plain">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Type your message here..."
+                    required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <p>Or email us at: <a href="mailto:support@rpsroyale.com">support@rpsroyale.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="copyright.html">Copyright</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function () {
+            this.classList.toggle('active'); // Toggle active class on hamburger
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active'); // Toggle nav menu visibility
+
+            // Add/remove class to shift the main content below the header
+            const mainContent = document.querySelector('main');
+            if (navMenu.classList.contains('active')) {
+                mainContent.classList.add('main-content-shift');  // Push content down
+            } else {
+                mainContent.classList.remove('main-content-shift');  // Return content to original position
+            }
+        });
+    </script>
+</body>
+
+</html>

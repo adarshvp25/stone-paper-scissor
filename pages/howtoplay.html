@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Play</title>
+    <link rel="stylesheet" href="howtoplay.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <p><a href="/index.html">RPS Royale</a></p>
+            </div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <div id="navMenu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="howtoplay.html">How To Play</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul>
+                <div class="buttons">
+                    <button>Login</button>
+                    <button>Sign Up</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>How to Play</h1>
+        <div class="container">
+            <ol>
+                <li><strong>Choose Rock, Paper, or Scissors:</strong> Make your move by clicking one of the three icons.
+                </li>
+                <li><strong>Your Opponent Will Be Selected:</strong> A real player or bot will face you in a
+                    head-to-head match.</li>
+                <li><strong>Game Rules:</strong> Rock beats Scissors, Scissors beat Paper, and Paper beats Rock.</li>
+                <li><strong>Score the Highest and Win:</strong> Play multiple rounds, improve your strategy, and climb
+                    the leaderboard!</li>
+            </ol>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="#">Copyright</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function () {
+            this.classList.toggle('active'); // Toggle active class on hamburger
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active'); // Toggle nav menu visibility
+
+            // Add/remove class to shift the main content below the header
+            const mainContent = document.querySelector('main');
+            if (navMenu.classList.contains('active')) {
+                mainContent.classList.add('main-content-shift');  // Push content down
+            } else {
+                mainContent.classList.remove('main-content-shift');  // Return content to original position
+            }
+        });
+    </script>
+</body>
+
+</html>

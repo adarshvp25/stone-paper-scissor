@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | RPS Royale</title>
+    <link rel="stylesheet" href="privacypolicy.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <p><a href="/index.html">RPS Royale</a></p>
+            </div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <div id="navMenu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="./howtoplay.html">How To Play</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul>
+                <div class="buttons">
+                    <button>Login</button>
+                    <button>Sign Up</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Privacy Policy</h1>
+        <div class="container">
+            <p>At RPS Royale, we value your privacy. This Privacy Policy outlines how we collect, use, and protect your
+                personal information.</p>
+
+            <h2>1. Information We Collect</h2>
+            <ul>
+                <li><strong>Anonymous Gameplay Data:</strong> We may collect anonymous data about your choices and
+                    gameplay for improving the experience.</li>
+                <li><strong>Optional Login Information:</strong> If you choose to sign up, we collect your email and
+                    username to personalize your experience and save your scores.</li>
+            </ul>
+
+            <h2>2. How We Use Your Data</h2>
+            <p>We use your data to improve game functionality, track leaderboards, and offer a seamless gaming
+                experience across devices.</p>
+
+            <h2>3. Data Protection</h2>
+            <p>Your data is securely stored and never shared with third parties without your explicit consent.</p>
+
+            <h2>4. Cookies</h2>
+            <p>We may use cookies to enhance your experience. You can disable cookies through your browser settings.</p>
+
+            <h2>5. Your Rights</h2>
+            <p>You have the right to access, update, or delete your personal data. Contact us at <a
+                    href="mailto:support@rpsroyale.com">support@rpsroyale.com</a> for any data-related requests.</p>
+
+            <h2>6. Updates to This Policy</h2>
+            <p>We may update this Privacy Policy occasionally. Any changes will be posted on this page with a revised
+                date.</p>
+
+            <p>Effective Date: June 22, 2025</p>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="#">Copyright</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function () {
+            this.classList.toggle('active'); // Toggle active class on hamburger
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active'); // Toggle nav menu visibility
+
+            // Add/remove class to shift the main content below the header
+            const mainContent = document.querySelector('main');
+            if (navMenu.classList.contains('active')) {
+                mainContent.classList.add('main-content-shift');  // Push content down
+            } else {
+                mainContent.classList.remove('main-content-shift');  // Return content to original position
+            }
+        });
+    </script>
+</body>
+
+</html>
